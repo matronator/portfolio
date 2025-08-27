@@ -1,0 +1,23 @@
+{
+  "name": "matronator-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "@tailwindcss/vite": "^4.1.12",
+    "astro": "^5.13.3",
+    "daisyui": "^5.0.50",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.1.0",
+    "postcss-lightningcss": "^1.0.1",
+    "sharp": "^0.34.3"
+  }
+}

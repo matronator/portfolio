@@ -1,0 +1,615 @@
+html,
+body,
+div {
+  height: 100%;
+}
+
+html {
+  font-size: 1vmin;
+  background: #1a0606;
+}
+
+body {
+  margin: auto;
+}
+
+div {
+  transform-style: preserve-3d;
+  perspective: 100em;
+  position: relative;
+}
+div *,
+div *:before,
+div *:after, div:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+div:after {
+  width: 50em;
+  height: 50em;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0), #1a0606);
+  transform: translate3d(0, 0, 40em);
+  margin: auto;
+  bottom: 0;
+  right: 0;
+}
+
+moon {
+  margin: auto;
+  inset: 0;
+  width: 81em;
+  height: 81em;
+  background: #494143;
+  border-radius: 50%;
+}
+moon spin {
+  animation: r 10s linear infinite;
+  width: 80em;
+  height: 0;
+  margin: auto;
+  inset: 0;
+}
+moon c {
+  width: 80em;
+  height: 1em;
+}
+moon c:before, moon c:after {
+  width: 5em;
+  height: 5em;
+  box-shadow: 0 -1em #1a0606, inset 0 -1em #bfbebb;
+  border-radius: 50%;
+  transform: rotateY(-90deg);
+}
+moon c:after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg);
+}
+moon c:nth-of-type(1) {
+  transform: rotate(350deg) rotateY(230deg);
+}
+moon c:nth-of-type(1):before {
+  transform: rotateY(-90deg) scale(0.1);
+}
+moon c:nth-of-type(1):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(2) {
+  transform: rotate(38deg) rotateY(51deg);
+}
+moon c:nth-of-type(2):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(2):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.4);
+}
+moon c:nth-of-type(3) {
+  transform: rotate(360deg) rotateY(271deg);
+}
+moon c:nth-of-type(3):before {
+  transform: rotateY(-90deg) scale(0.7);
+}
+moon c:nth-of-type(3):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(4) {
+  transform: rotate(111deg) rotateY(44deg);
+}
+moon c:nth-of-type(4):before {
+  transform: rotateY(-90deg) scale(0.3);
+}
+moon c:nth-of-type(4):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.9);
+}
+moon c:nth-of-type(5) {
+  transform: rotate(224deg) rotateY(130deg);
+}
+moon c:nth-of-type(5):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(5):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(6) {
+  transform: rotate(307deg) rotateY(30deg);
+}
+moon c:nth-of-type(6):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(6):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.6);
+}
+moon c:nth-of-type(7) {
+  transform: rotate(4deg) rotateY(277deg);
+}
+moon c:nth-of-type(7):before {
+  transform: rotateY(-90deg) scale(0.3);
+}
+moon c:nth-of-type(7):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(8) {
+  transform: rotate(103deg) rotateY(193deg);
+}
+moon c:nth-of-type(8):before {
+  transform: rotateY(-90deg) scale(0.3);
+}
+moon c:nth-of-type(8):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.6);
+}
+moon c:nth-of-type(9) {
+  transform: rotate(313deg) rotateY(209deg);
+}
+moon c:nth-of-type(9):before {
+  transform: rotateY(-90deg) scale(0.7);
+}
+moon c:nth-of-type(9):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(10) {
+  transform: rotate(151deg) rotateY(315deg);
+}
+moon c:nth-of-type(10):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(10):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.3);
+}
+moon c:nth-of-type(11) {
+  transform: rotate(348deg) rotateY(69deg);
+}
+moon c:nth-of-type(11):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(11):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(12) {
+  transform: rotate(87deg) rotateY(335deg);
+}
+moon c:nth-of-type(12):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(12):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(13) {
+  transform: rotate(193deg) rotateY(273deg);
+}
+moon c:nth-of-type(13):before {
+  transform: rotateY(-90deg) scale(0.5);
+}
+moon c:nth-of-type(13):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(14) {
+  transform: rotate(29deg) rotateY(9deg);
+}
+moon c:nth-of-type(14):before {
+  transform: rotateY(-90deg) scale(0.7);
+}
+moon c:nth-of-type(14):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(15) {
+  transform: rotate(225deg) rotateY(166deg);
+}
+moon c:nth-of-type(15):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(15):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.6);
+}
+moon c:nth-of-type(16) {
+  transform: rotate(180deg) rotateY(118deg);
+}
+moon c:nth-of-type(16):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(16):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.8);
+}
+moon c:nth-of-type(17) {
+  transform: rotate(299deg) rotateY(302deg);
+}
+moon c:nth-of-type(17):before {
+  transform: rotateY(-90deg) scale(0.1);
+}
+moon c:nth-of-type(17):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(18) {
+  transform: rotate(25deg) rotateY(256deg);
+}
+moon c:nth-of-type(18):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(18):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(19) {
+  transform: rotate(38deg) rotateY(197deg);
+}
+moon c:nth-of-type(19):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(19):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(20) {
+  transform: rotate(49deg) rotateY(147deg);
+}
+moon c:nth-of-type(20):before {
+  transform: rotateY(-90deg) scale(0.9);
+}
+moon c:nth-of-type(20):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(21) {
+  transform: rotate(205deg) rotateY(184deg);
+}
+moon c:nth-of-type(21):before {
+  transform: rotateY(-90deg) scale(0.5);
+}
+moon c:nth-of-type(21):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.9);
+}
+moon c:nth-of-type(22) {
+  transform: rotate(253deg) rotateY(356deg);
+}
+moon c:nth-of-type(22):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(22):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(23) {
+  transform: rotate(136deg) rotateY(142deg);
+}
+moon c:nth-of-type(23):before {
+  transform: rotateY(-90deg) scale(0.9);
+}
+moon c:nth-of-type(23):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(24) {
+  transform: rotate(316deg) rotateY(63deg);
+}
+moon c:nth-of-type(24):before {
+  transform: rotateY(-90deg) scale(0.1);
+}
+moon c:nth-of-type(24):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.8);
+}
+moon c:nth-of-type(25) {
+  transform: rotate(270deg) rotateY(182deg);
+}
+moon c:nth-of-type(25):before {
+  transform: rotateY(-90deg) scale(0.6);
+}
+moon c:nth-of-type(25):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.4);
+}
+moon c:nth-of-type(26) {
+  transform: rotate(83deg) rotateY(111deg);
+}
+moon c:nth-of-type(26):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(26):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.8);
+}
+moon c:nth-of-type(27) {
+  transform: rotate(201deg) rotateY(64deg);
+}
+moon c:nth-of-type(27):before {
+  transform: rotateY(-90deg) scale(0.5);
+}
+moon c:nth-of-type(27):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(28) {
+  transform: rotate(244deg) rotateY(213deg);
+}
+moon c:nth-of-type(28):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(28):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.9);
+}
+moon c:nth-of-type(29) {
+  transform: rotate(74deg) rotateY(171deg);
+}
+moon c:nth-of-type(29):before {
+  transform: rotateY(-90deg) scale(0.5);
+}
+moon c:nth-of-type(29):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(30) {
+  transform: rotate(264deg) rotateY(244deg);
+}
+moon c:nth-of-type(30):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(30):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(31) {
+  transform: rotate(264deg) rotateY(272deg);
+}
+moon c:nth-of-type(31):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(31):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.9);
+}
+moon c:nth-of-type(32) {
+  transform: rotate(31deg) rotateY(46deg);
+}
+moon c:nth-of-type(32):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(32):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.6);
+}
+moon c:nth-of-type(33) {
+  transform: rotate(269deg) rotateY(273deg);
+}
+moon c:nth-of-type(33):before {
+  transform: rotateY(-90deg) scale(0.6);
+}
+moon c:nth-of-type(33):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(34) {
+  transform: rotate(207deg) rotateY(206deg);
+}
+moon c:nth-of-type(34):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(34):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(35) {
+  transform: rotate(143deg) rotateY(183deg);
+}
+moon c:nth-of-type(35):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(35):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.8);
+}
+moon c:nth-of-type(36) {
+  transform: rotate(324deg) rotateY(280deg);
+}
+moon c:nth-of-type(36):before {
+  transform: rotateY(-90deg) scale(0.8);
+}
+moon c:nth-of-type(36):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(37) {
+  transform: rotate(354deg) rotateY(86deg);
+}
+moon c:nth-of-type(37):before {
+  transform: rotateY(-90deg) scale(0.3);
+}
+moon c:nth-of-type(37):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(38) {
+  transform: rotate(33deg) rotateY(332deg);
+}
+moon c:nth-of-type(38):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(38):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(39) {
+  transform: rotate(68deg) rotateY(304deg);
+}
+moon c:nth-of-type(39):before {
+  transform: rotateY(-90deg) scale(0.6);
+}
+moon c:nth-of-type(39):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.9);
+}
+moon c:nth-of-type(40) {
+  transform: rotate(337deg) rotateY(268deg);
+}
+moon c:nth-of-type(40):before {
+  transform: rotateY(-90deg) scale(0.1);
+}
+moon c:nth-of-type(40):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(41) {
+  transform: rotate(141deg) rotateY(127deg);
+}
+moon c:nth-of-type(41):before {
+  transform: rotateY(-90deg) scale(1);
+}
+moon c:nth-of-type(41):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(42) {
+  transform: rotate(322deg) rotateY(210deg);
+}
+moon c:nth-of-type(42):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(42):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(43) {
+  transform: rotate(286deg) rotateY(126deg);
+}
+moon c:nth-of-type(43):before {
+  transform: rotateY(-90deg) scale(0.1);
+}
+moon c:nth-of-type(43):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(44) {
+  transform: rotate(186deg) rotateY(240deg);
+}
+moon c:nth-of-type(44):before {
+  transform: rotateY(-90deg) scale(0.3);
+}
+moon c:nth-of-type(44):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(45) {
+  transform: rotate(142deg) rotateY(331deg);
+}
+moon c:nth-of-type(45):before {
+  transform: rotateY(-90deg) scale(0.5);
+}
+moon c:nth-of-type(45):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.3);
+}
+moon c:nth-of-type(46) {
+  transform: rotate(356deg) rotateY(318deg);
+}
+moon c:nth-of-type(46):before {
+  transform: rotateY(-90deg) scale(0.6);
+}
+moon c:nth-of-type(46):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(47) {
+  transform: rotate(247deg) rotateY(27deg);
+}
+moon c:nth-of-type(47):before {
+  transform: rotateY(-90deg) scale(0.6);
+}
+moon c:nth-of-type(47):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(1);
+}
+moon c:nth-of-type(48) {
+  transform: rotate(139deg) rotateY(233deg);
+}
+moon c:nth-of-type(48):before {
+  transform: rotateY(-90deg) scale(0.8);
+}
+moon c:nth-of-type(48):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.8);
+}
+moon c:nth-of-type(49) {
+  transform: rotate(150deg) rotateY(114deg);
+}
+moon c:nth-of-type(49):before {
+  transform: rotateY(-90deg) scale(0.9);
+}
+moon c:nth-of-type(49):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.5);
+}
+moon c:nth-of-type(50) {
+  transform: rotate(346deg) rotateY(162deg);
+}
+moon c:nth-of-type(50):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(50):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(51) {
+  transform: rotate(172deg) rotateY(278deg);
+}
+moon c:nth-of-type(51):before {
+  transform: rotateY(-90deg) scale(0.7);
+}
+moon c:nth-of-type(51):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(52) {
+  transform: rotate(270deg) rotateY(182deg);
+}
+moon c:nth-of-type(52):before {
+  transform: rotateY(-90deg) scale(0.4);
+}
+moon c:nth-of-type(52):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.8);
+}
+moon c:nth-of-type(53) {
+  transform: rotate(23deg) rotateY(137deg);
+}
+moon c:nth-of-type(53):before {
+  transform: rotateY(-90deg) scale(0.1);
+}
+moon c:nth-of-type(53):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.1);
+}
+moon c:nth-of-type(54) {
+  transform: rotate(187deg) rotateY(269deg);
+}
+moon c:nth-of-type(54):before {
+  transform: rotateY(-90deg) scale(0.8);
+}
+moon c:nth-of-type(54):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.7);
+}
+moon c:nth-of-type(55) {
+  transform: rotate(289deg) rotateY(145deg);
+}
+moon c:nth-of-type(55):before {
+  transform: rotateY(-90deg) scale(0.9);
+}
+moon c:nth-of-type(55):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.3);
+}
+moon c:nth-of-type(56) {
+  transform: rotate(223deg) rotateY(242deg);
+}
+moon c:nth-of-type(56):before {
+  transform: rotateY(-90deg) scale(0.7);
+}
+moon c:nth-of-type(56):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.3);
+}
+moon c:nth-of-type(57) {
+  transform: rotate(40deg) rotateY(34deg);
+}
+moon c:nth-of-type(57):before {
+  transform: rotateY(-90deg) scale(0.8);
+}
+moon c:nth-of-type(57):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.6);
+}
+moon c:nth-of-type(58) {
+  transform: rotate(191deg) rotateY(164deg);
+}
+moon c:nth-of-type(58):before {
+  transform: rotateY(-90deg) scale(0.8);
+}
+moon c:nth-of-type(58):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(59) {
+  transform: rotate(9deg) rotateY(204deg);
+}
+moon c:nth-of-type(59):before {
+  transform: rotateY(-90deg) scale(0.8);
+}
+moon c:nth-of-type(59):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.2);
+}
+moon c:nth-of-type(60) {
+  transform: rotate(162deg) rotateY(175deg);
+}
+moon c:nth-of-type(60):before {
+  transform: rotateY(-90deg) scale(0.2);
+}
+moon c:nth-of-type(60):after {
+  transform: translate3d(75rem, 0, 0) rotateY(90deg) scale(0.4);
+}
+@keyframes r {
+  to {
+    transform: rotateY(360deg);
+  }
+}

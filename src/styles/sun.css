@@ -1,0 +1,161 @@
+.sun:before {
+    background: radial-gradient(closest-side, #FFFDA4, #FB7417 98%, rgba(255, 255, 255, 0));
+    transform: translate3d(0, 0, 5rem);
+}
+
+.sun:after {
+    background: #D73A4D;
+    transform: translate3d(0, 0, 40rem) scale(0.75);
+    mask-image: radial-gradient(closest-side, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff 90%, rgba(255, 255, 255, 0));
+    opacity: 0.5;
+}
+
+.sun,
+.sun > .surface,
+.sun:before,
+.sun:after,
+.sun > .surface > .flare {
+    position: absolute;
+    width: 160px;
+    border-radius: 50%;
+    margin: auto;
+    inset: 0;
+    aspect-ratio: 1/1;
+}
+
+.sun > .surface {
+    animation: r 10s linear infinite;
+}
+
+.sun > .surface,
+.sun > .surface > .flare {
+    box-shadow: 0 0 3em #FFFDA4;
+    background: #FFFDA4;
+}
+
+.sun > .surface > .flare:nth-of-type(1) {
+    box-shadow: 2em 0 3em #FFFDA4;
+    transform: rotateY(810deg) rotateX(40deg) rotate(490deg);
+    animation: r 10s -11s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(2) {
+    transform: rotateY(820deg) rotateX(0deg) rotate(1310deg);
+    animation: r 10s -10s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(3) {
+    transform: rotateY(830deg) rotateX(-10deg) rotate(1220deg);
+    animation: r 10s -9s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(4) {
+    transform: rotateY(840deg) rotateX(40deg) rotate(1050deg);
+    animation: r 10s -8s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(5) {
+    transform: rotateY(850deg) rotateX(-20deg) rotate(1010deg);
+    animation: r 10s -7s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(6) {
+    transform: rotateY(860deg) rotateX(-10deg) rotate(1090deg);
+    animation: r 10s -6s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(7) {
+    transform: rotateY(870deg) rotateX(50deg) rotate(1290deg);
+    animation: r 10s -5s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(8) {
+    transform: rotateY(880deg) rotateX(50deg) rotate(530deg);
+    animation: r 10s -4s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(9) {
+    transform: rotateY(890deg) rotateX(10deg) rotate(1340deg);
+    animation: r 10s -3s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(10) {
+    transform: rotateY(900deg) rotateX(40deg) rotate(790deg);
+    animation: r 10s -2s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(11) {
+    transform: rotateY(910deg) rotateX(20deg) rotate(770deg);
+    animation: r 10s -1s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(12) {
+    transform: rotateY(920deg) rotateX(0deg) rotate(490deg);
+    animation: r 10s 0s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(13) {
+    transform: rotateY(930deg) rotateX(30deg) rotate(670deg);
+    animation: r 10s 1s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(14) {
+    transform: rotateY(940deg) rotateX(20deg) rotate(950deg);
+    animation: r 10s 2s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(15) {
+    transform: rotateY(950deg) rotateX(-40deg) rotate(1050deg);
+    animation: r 10s 3s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(16) {
+    transform: rotateY(960deg) rotateX(40deg) rotate(1290deg);
+    animation: r 10s 4s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(17) {
+    transform: rotateY(970deg) rotateX(10deg) rotate(1260deg);
+    animation: r 10s 5s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(18) {
+    transform: rotateY(980deg) rotateX(-30deg) rotate(1260deg);
+    animation: r 10s 6s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(19) {
+    transform: rotateY(990deg) rotateX(40deg) rotate(580deg);
+    animation: r 10s 7s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(20) {
+    transform: rotateY(1000deg) rotateX(-10deg) rotate(550deg);
+    animation: r 10s 8s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(21) {
+    transform: rotateY(1010deg) rotateX(-10deg) rotate(840deg);
+    animation: r 10s 9s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(22) {
+    transform: rotateY(1020deg) rotateX(30deg) rotate(760deg);
+    animation: r 10s 10s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(23) {
+    transform: rotateY(1030deg) rotateX(-40deg) rotate(540deg);
+    animation: r 10s 11s linear infinite;
+}
+
+.sun > .surface > .flare:nth-of-type(24) {
+    transform: rotateY(1040deg) rotateX(40deg) rotate(1000deg);
+    animation: r 10s 12s linear infinite;
+}
+
+@keyframes r {
+    to {
+      transform: rotateY(360deg);
+    }
+  }

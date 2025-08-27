@@ -1,0 +1,98 @@
+---
+import { Image } from "astro:assets";
+import icePlanet from "../assets/ice-planet.png";
+import lavaPlanet from "../assets/lava-planet.png";
+import '../styles/sun.css';
+---
+
+<style>
+    .main-menu-item {
+        width: 120px;
+        vertical-align: middle;
+        position: relative;
+        transition: all 600ms ease-in;
+
+        &.item-sun {
+            width: 180px;
+        }
+
+        &.item-about {
+            & > img {
+                transform: rotateZ(60deg);
+            }
+            &.selected {
+                height: 90vh;
+                width: 90vh;
+                right: 0;
+            }
+        }
+    }
+
+    .sun {
+        width: 180px;
+        height: 180px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        animation: flow 10s infinite alternate;
+    }
+
+    @keyframes flow {
+    0% {
+    box-shadow: 0 0 50px #fffc01,
+                0 0 150px #ffad01;
+
+    }
+    25% {
+    box-shadow: 0 0 50px #fffc01,
+                0 0 200px #ffad01;
+
+    }
+    50% {
+    box-shadow: 0 0 100px #fffc01,
+                0 0 300px #ffad01;
+
+    }
+    75% {
+    box-shadow: 0 0 50px #fffc01,
+                0 0 200px #ffad01;
+
+    }
+    100% {
+    box-shadow: 0 0 20px #fffc01,
+                0 0 150px #ffad01;
+    }
+}
+</style>
+
+<nav class="main-menu flex items-center justify-around w-full h-full">
+    <a href="#" class="main-menu-item item-about text-center" id="item-about">
+        <span>About</span>
+        <Image src={icePlanet} alt="About" />
+    </a>
+    <a href="#" class="main-menu-item item-sun">
+        <div class="sun">
+            <div class="surface">
+                {Array.from({ length: 24 }).map(() => (
+                    <div class="flare"></div>
+                ))}
+            </div>
+        </div>
+    </a>
+    <a href="#" class="main-menu-item">
+        <Image src={lavaPlanet} alt="Contact" />
+    </a>
+</nav>
+
+<script>
+    const items = document.querySelectorAll(".main-menu-item");
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            items.forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('selected');
+                }
+            });
+            item.classList.add('selected');
+        });
+    });
+</script>

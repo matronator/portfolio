@@ -1,0 +1,119 @@
+---
+const count = 250;
+
+function rand(min: number, max: number): number {
+  return Math.random() * (max - min) + min;
+}
+
+const stars = Array.from({ length: count }, () => ({
+  left: Math.random() * 100,
+  top: Math.random() * 100,
+  size: rand(1, 3),
+  op: rand(0.35, 1),
+  twinkle: `${rand(3.5, 8).toFixed(2)}s`,
+  delay: `${(-rand(0, 8)).toFixed(2)}s`
+}));
+---
+
+<div class="nebula" aria-hidden="true"></div>
+<div class="space" aria-hidden="true">
+  {stars.map(star => (
+    <div
+      class="star"
+      style={`left:${star.left}vw; top:${star.top}vh; --size:${star.size}px; --opacity:${star.op}; --twinkle:${star.twinkle}; animation-delay:${star.delay}`}
+    />
+  ))}
+</div>
+
+<style>
+   /* :host {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(
+      120% 140% at 50% 120%,
+      #0b0d17 0%,
+      #05060d 60%,
+      #000 100%
+    );
+  } */
+
+  /* .nebula::before,
+  .nebula::after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(128,0,128,0.2), transparent 70%),
+                radial-gradient(circle, rgba(0, 108, 208, 0.2), transparent 70%);
+    mix-blend-mode: screen;
+    animation: slowRotate 60s linear infinite;
+  }
+  .nebula::after {
+    animation-direction: reverse;
+  } */
+
+  .nebula::before,
+  .nebula::after {
+    content: "";
+    position: fixed;
+    inset: -20vmax;
+    pointer-events: none;
+    background: radial-gradient(
+        40vmax 30vmax at 15% 25%,
+        rgba(120, 108, 255, 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        35vmax 25vmax at 80% 15%,
+        rgba(255, 95, 109, 0.14),
+        transparent 65%
+      ),
+      radial-gradient(
+        50vmax 40vmax at 70% 80%,
+        rgba(56, 189, 248, 0.14),
+        transparent 60%
+      );
+    filter: blur(2px) contrast(105%);
+    animation: slowRotate 240s linear infinite;
+    z-index: 1;
+  }
+  .nebula::after {
+    opacity: 0.7;
+    mix-blend-mode: screen;
+  }
+
+  .space {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(ellipse at bottom, #0d1a26 0%, #000 100%);
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .star {
+    position: absolute;
+    width: var(--size, 2px);
+    height: var(--size, 2px);
+    background: white;
+    border-radius: 50%;
+    opacity: var(--opacity, 0.9);
+    animation: twinkle var(--twinkle, 5s) ease-in-out infinite;
+    z-index: 1;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: var(--opacity, 0.9); transform: scale(1); }
+    50% { opacity: calc(var(--opacity, 0.9) * 0.35); transform: scale(0.6); }
+  }
+
+  @keyframes slowRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>
