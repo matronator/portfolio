@@ -1,11 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import icePlanet from "../assets/ice-planet.png";
 import lavaPlanet from "../assets/lava-planet.png";
-import '../styles/sun.css';
+import Earth from "./planets/Earth.astro";
+import Sun from "./planets/Sun.astro";
 ---
 
 <style>
+    .main-menu {
+        transform-style: preserve-3d;
+        perspective: 100em;
+        position: relative;
+    }
+
     .main-menu-item {
         width: 120px;
         vertical-align: middle;
@@ -17,66 +23,33 @@ import '../styles/sun.css';
         }
 
         &.item-about {
-            & > img {
-                transform: rotateZ(60deg);
+            width: 120px;
+            height: 120px;
+            & > :global(.planet-container) {
+                transform-origin: 0 0;
+                scale: calc(1 / 500 * 120);
+                transition: scale 150ms ease-in;
             }
             &.selected {
                 height: 90vh;
                 width: 90vh;
                 right: 0;
+                & > :global(.planet-container) {
+                    --vh: calc(var(--vh, 1vh) * 90);
+                    scale: calc(1 / 500 * var(--vh));
+                }
             }
         }
     }
-
-    .sun {
-        width: 180px;
-        height: 180px;
-        border-radius: 100%;
-        background-color: #ffffff;
-        animation: flow 10s infinite alternate;
-    }
-
-    @keyframes flow {
-    0% {
-    box-shadow: 0 0 50px #fffc01,
-                0 0 150px #ffad01;
-
-    }
-    25% {
-    box-shadow: 0 0 50px #fffc01,
-                0 0 200px #ffad01;
-
-    }
-    50% {
-    box-shadow: 0 0 100px #fffc01,
-                0 0 300px #ffad01;
-
-    }
-    75% {
-    box-shadow: 0 0 50px #fffc01,
-                0 0 200px #ffad01;
-
-    }
-    100% {
-    box-shadow: 0 0 20px #fffc01,
-                0 0 150px #ffad01;
-    }
-}
 </style>
 
 <nav class="main-menu flex items-center justify-around w-full h-full">
     <a href="#" class="main-menu-item item-about text-center" id="item-about">
         <span>About</span>
-        <Image src={icePlanet} alt="About" />
+        <Earth />
     </a>
     <a href="#" class="main-menu-item item-sun">
-        <div class="sun">
-            <div class="surface">
-                {Array.from({ length: 24 }).map(() => (
-                    <div class="flare"></div>
-                ))}
-            </div>
-        </div>
+        <Sun />
     </a>
     <a href="#" class="main-menu-item">
         <Image src={lavaPlanet} alt="Contact" />
@@ -95,4 +68,10 @@ import '../styles/sun.css';
             item.classList.add('selected');
         });
     });
+
+    const resizeObserver = new ResizeObserver(() => {
+        document.documentElement.style.setProperty(`--vh`, `${window.innerHeight / 100}px`);
+    });
+
+    resizeObserver.observe(document.documentElement);
 </script>

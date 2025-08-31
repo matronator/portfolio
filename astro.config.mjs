@@ -20,19 +20,19 @@ export default defineConfig({
         }
       },
       transformer: 'postcss',
-      postcss: {
-        plugins: [
-          postcssLightningcss({
-              browsers: "> 0.3%, last 2 versions, Firefox ESR, not dead",
-              lightningcssOptions: {
-                  drafts: {
-                      nesting: true,
-                      customMedia: true,
-                  }
-              }
-          }),
-        ]
-      }
+      // postcss: {
+      //   plugins: [
+      //     postcssLightningcss({
+      //         browsers: "> 0.3%, last 2 versions, Firefox ESR, not dead",
+      //         lightningcssOptions: {
+      //             drafts: {
+      //                 nesting: true,
+      //                 customMedia: true,
+      //             }
+      //         }
+      //     }),
+      //   ]
+      // }
     }
   },
   output: 'static'

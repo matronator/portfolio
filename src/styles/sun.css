@@ -1,161 +1,214 @@
-.sun:before {
-    background: radial-gradient(closest-side, #FFFDA4, #FB7417 98%, rgba(255, 255, 255, 0));
+.sun {
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    background-color: #ffffff66;
+    animation: flow 10s infinite alternate;
+    z-index: 1;
+}
+
+.sun::before {
+    background: radial-gradient(closest-side, #ffffff, rgb(255, 242, 157) 90%, rgba(255, 255, 255, 0));
     transform: translate3d(0, 0, 5rem);
 }
 
-.sun:after {
-    background: #D73A4D;
+.sun::after {
+    background: #fff;
     transform: translate3d(0, 0, 40rem) scale(0.75);
     mask-image: radial-gradient(closest-side, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff 90%, rgba(255, 255, 255, 0));
-    opacity: 0.5;
+    opacity: 1;
+    /* background: radial-gradient(#ffeab6, #fff); */
+    /* transform: translate3d(0, 0, 20rem); */
+    filter: blur(1rem);
+}
+
+.item-sun *,
+.item-sun *:before,
+.item-sun *:after,
+.item-sun:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
 }
 
 .sun,
-.sun > .surface,
-.sun:before,
-.sun:after,
-.sun > .surface > .flare {
+.sun>.surface,
+.sun::before,
+.sun::after,
+.sun>.surface>.flare {
     position: absolute;
-    width: 160px;
+    width: 180px;
     border-radius: 50%;
     margin: auto;
     inset: 0;
     aspect-ratio: 1/1;
+    transform-style: preserve-3d;
 }
 
-.sun > .surface {
-    animation: r 10s linear infinite;
+.sun, .surface {
+    transform-style: preserve-3d;
+    perspective: 100rem;
+    width: 180px;
+    aspect-ratio: 1/1;
+    margin: auto;
 }
 
-.sun > .surface,
-.sun > .surface > .flare {
-    box-shadow: 0 0 3em #FFFDA4;
-    background: #FFFDA4;
+.sun .surface {
+    animation: rotate 15s linear infinite;
 }
 
-.sun > .surface > .flare:nth-of-type(1) {
-    box-shadow: 2em 0 3em #FFFDA4;
-    transform: rotateY(810deg) rotateX(40deg) rotate(490deg);
-    animation: r 10s -11s linear infinite;
+.sun>.surface,
+.sun>.surface>.flare {
+    box-shadow: 0 0 3em #ffffff;
+    background: #ffffff;
 }
 
-.sun > .surface > .flare:nth-of-type(2) {
-    transform: rotateY(820deg) rotateX(0deg) rotate(1310deg);
-    animation: r 10s -10s linear infinite;
+.sun .flare {
+    box-shadow: 20px 0 50px rgba(255, 255, 255, 0.4);
 }
 
-.sun > .surface > .flare:nth-of-type(3) {
-    transform: rotateY(830deg) rotateX(-10deg) rotate(1220deg);
-    animation: r 10s -9s linear infinite;
+.sun .flare:nth-of-type(1) {
+    transform: rotateY(8deg) rotateX(14deg);
 }
 
-.sun > .surface > .flare:nth-of-type(4) {
-    transform: rotateY(840deg) rotateX(40deg) rotate(1050deg);
-    animation: r 10s -8s linear infinite;
+.sun .flare:nth-of-type(2) {
+    transform: rotateY(4deg) rotateX(8deg);
 }
 
-.sun > .surface > .flare:nth-of-type(5) {
-    transform: rotateY(850deg) rotateX(-20deg) rotate(1010deg);
-    animation: r 10s -7s linear infinite;
+.sun .flare:nth-of-type(3) {
+    transform: rotateY(24deg) rotateX(33deg);
 }
 
-.sun > .surface > .flare:nth-of-type(6) {
-    transform: rotateY(860deg) rotateX(-10deg) rotate(1090deg);
-    animation: r 10s -6s linear infinite;
+.sun .flare:nth-of-type(4) {
+    transform: rotateY(32deg) rotateX(24deg);
 }
 
-.sun > .surface > .flare:nth-of-type(7) {
-    transform: rotateY(870deg) rotateX(50deg) rotate(1290deg);
-    animation: r 10s -5s linear infinite;
+.sun .flare:nth-of-type(5) {
+    transform: rotateY(100deg) rotateX(15deg);
 }
 
-.sun > .surface > .flare:nth-of-type(8) {
-    transform: rotateY(880deg) rotateX(50deg) rotate(530deg);
-    animation: r 10s -4s linear infinite;
+.sun .flare:nth-of-type(6) {
+    transform: rotateY(66deg) rotateX(114deg);
 }
 
-.sun > .surface > .flare:nth-of-type(9) {
-    transform: rotateY(890deg) rotateX(10deg) rotate(1340deg);
-    animation: r 10s -3s linear infinite;
+.sun .flare:nth-of-type(7) {
+    transform: rotateY(133deg) rotateX(119deg);
 }
 
-.sun > .surface > .flare:nth-of-type(10) {
-    transform: rotateY(900deg) rotateX(40deg) rotate(790deg);
-    animation: r 10s -2s linear infinite;
+.sun .flare:nth-of-type(8) {
+    transform: rotateY(16deg) rotateX(120deg);
 }
 
-.sun > .surface > .flare:nth-of-type(11) {
-    transform: rotateY(910deg) rotateX(20deg) rotate(770deg);
-    animation: r 10s -1s linear infinite;
+.sun .flare:nth-of-type(9) {
+    transform: rotateY(45deg) rotateX(108deg);
 }
 
-.sun > .surface > .flare:nth-of-type(12) {
-    transform: rotateY(920deg) rotateX(0deg) rotate(490deg);
-    animation: r 10s 0s linear infinite;
+.sun .flare:nth-of-type(10) {
+    transform: rotateY(150deg) rotateX(10deg);
 }
 
-.sun > .surface > .flare:nth-of-type(13) {
-    transform: rotateY(930deg) rotateX(30deg) rotate(670deg);
-    animation: r 10s 1s linear infinite;
+.sun .flare:nth-of-type(11) {
+    transform: rotateY(154deg) rotateX(198deg);
 }
 
-.sun > .surface > .flare:nth-of-type(14) {
-    transform: rotateY(940deg) rotateX(20deg) rotate(950deg);
-    animation: r 10s 2s linear infinite;
+.sun .flare:nth-of-type(12) {
+    transform: rotateY(24deg) rotateX(132deg);
 }
 
-.sun > .surface > .flare:nth-of-type(15) {
-    transform: rotateY(950deg) rotateX(-40deg) rotate(1050deg);
-    animation: r 10s 3s linear infinite;
+.sun .flare:nth-of-type(13) {
+    transform: rotateY(13deg) rotateX(260deg);
 }
 
-.sun > .surface > .flare:nth-of-type(16) {
-    transform: rotateY(960deg) rotateX(40deg) rotate(1290deg);
-    animation: r 10s 4s linear infinite;
+.sun .flare:nth-of-type(14) {
+    transform: rotateY(252deg) rotateX(224deg);
 }
 
-.sun > .surface > .flare:nth-of-type(17) {
-    transform: rotateY(970deg) rotateX(10deg) rotate(1260deg);
-    animation: r 10s 5s linear infinite;
+.sun .flare:nth-of-type(15) {
+    transform: rotateY(270deg) rotateX(120deg);
 }
 
-.sun > .surface > .flare:nth-of-type(18) {
-    transform: rotateY(980deg) rotateX(-30deg) rotate(1260deg);
-    animation: r 10s 6s linear infinite;
+.sun .flare:nth-of-type(16) {
+    transform: rotateY(304deg) rotateX(288deg);
 }
 
-.sun > .surface > .flare:nth-of-type(19) {
-    transform: rotateY(990deg) rotateX(40deg) rotate(580deg);
-    animation: r 10s 7s linear infinite;
+.sun .flare:nth-of-type(17) {
+    transform: rotateY(34deg) rotateX(255deg);
 }
 
-.sun > .surface > .flare:nth-of-type(20) {
-    transform: rotateY(1000deg) rotateX(-10deg) rotate(550deg);
-    animation: r 10s 8s linear infinite;
+.sun .flare:nth-of-type(18) {
+    transform: rotateY(252deg) rotateX(108deg);
 }
 
-.sun > .surface > .flare:nth-of-type(21) {
-    transform: rotateY(1010deg) rotateX(-10deg) rotate(840deg);
-    animation: r 10s 9s linear infinite;
+.sun .flare:nth-of-type(19) {
+    transform: rotateY(152deg) rotateX(323deg);
 }
 
-.sun > .surface > .flare:nth-of-type(22) {
-    transform: rotateY(1020deg) rotateX(30deg) rotate(760deg);
-    animation: r 10s 10s linear infinite;
+.sun .flare:nth-of-type(20) {
+    transform: rotateY(180deg) rotateX(40deg);
 }
 
-.sun > .surface > .flare:nth-of-type(23) {
-    transform: rotateY(1030deg) rotateX(-40deg) rotate(540deg);
-    animation: r 10s 11s linear infinite;
+.sun .flare:nth-of-type(21) {
+    transform: rotateY(168deg) rotateX(378deg);
 }
 
-.sun > .surface > .flare:nth-of-type(24) {
-    transform: rotateY(1040deg) rotateX(40deg) rotate(1000deg);
-    animation: r 10s 12s linear infinite;
+.sun .flare:nth-of-type(22) {
+    transform: rotateY(44deg) rotateX(44deg);
 }
 
-@keyframes r {
+.sun .flare:nth-of-type(23) {
+    transform: rotateY(391deg) rotateX(253deg);
+}
+
+.sun .flare:nth-of-type(24) {
+    transform: rotateY(48deg) rotateX(192deg);
+}
+
+@keyframes rotate {
     to {
-      transform: rotateY(360deg);
+        transform: rotateY(360deg);
     }
-  }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes flow {
+    0% {
+    box-shadow: 0 0 50px #ffdd01,
+                0 0 150px #ffad01;
+
+    }
+    25% {
+    box-shadow: 0 0 50px #ffdd01,
+                0 0 200px #ffad01;
+
+    }
+    50% {
+    box-shadow: 0 0 100px #ffdd01,
+                0 0 300px #ffad01;
+
+    }
+    75% {
+    box-shadow: 0 0 50px #ffdd01,
+                0 0 200px #ffad01;
+
+    }
+    100% {
+    box-shadow: 0 0 20px #ffdd01,
+                0 0 150px #ffad01;
+    }
+}
